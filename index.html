@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qijun's Site</title>
+    <title>Qijun's Portfolio</title>
     <link href="index.css" rel="stylesheet" />
     <style>
         body {
@@ -12,47 +12,145 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Another Test</h1>
-    </header>
-
     <nav>
-
+        <a href="#home">Home</a>
+        <a href="#project">Project</a>
+        <a href="#about">About</a>
+        <a href="./assets/Resume-Software Development Engineer.pdf" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <main>
-        <section>
+        <section id="home">
+            <h1>Hi, I am Qijun(Mary) Hu!</h1>
+            <p>I am an undergraduate student majoring in <span><strong>Math-CS</strong></span> and <span><strong>Cognitive Science</strong></span> with <em>Design and Interaction specialization</em> at UCSD.
+                I focus on <span><strong>Front-End</strong></span> and <span><strong>Full-Stack</strong></span> developing.</p>
+            <picture>
+                <source srcset="./assets/hero.webp" type="image/webp" />
+                <img src="./assets/hero.png" alt="hero image here" />
+            </picture>
+        </section>
+        <hr>
+        <section id="project">
+            <header>
+                <h2>Project</h2>
+            </header>
 
+            <article>
+                <figure>
+                    <img src="./assets/project_icon.png" alt="project 1 icon here" />
+                </figure>
+                <h3>Account Safety APP</h3>
+                <p>This app is designed to protect users' accounts by generating fake identities, managing passwords, and showing log in locations for users.</p>
+                <button>Learn More</button>
+            </article>
+            <br>
+            <article>
+                <figure>
+                    <img src="./assets/project_icon.png" alt="project 2 icon here" />
+                </figure>
+                <h3>Project 2</h3>
+                <p>This website is...</p>
+                <button>Learn More</button>
+            </article>
+            <br>
+            <article>
+                <figure>
+                    <img src="./assets/project_icon.png" alt="project 3 icon here" />
+                </figure>
+                <h3>Project 3</h3>
+                <p>This web app is...</p>
+                <button>Learn More</button>
+            </article>
+        </section>
+        <hr>
+        <section id="about">
+            <header>
+                <h2>About</h2>
+            </header>
+            
+            <p>Hi, I am Qijun Hu! I'm currently open to any internship/lab opportunities! Feel free to contact me.</p>
+            <figure>
+                <img src="needContent" alt="Picture of me" />
+                <figcaption>This is me!</figcaption>
+            </figure>
+        </section>
+        <hr>
+        <section id="contact">
+            <header>
+                <h2>Contact</h2>
+            </header>
+
+            <form action="https://httpbin.org/get" method="get">
+                <fieldset>
+                    <legend>Let's connect!</legend>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required/>
+                    <label for="email_address">Email Address</label>
+                    <input type="text" id="email_address" name="email_address" required/>
+                    <br>
+                    <label for="message">Message</label>
+                    <br>
+                    <textarea id="message" name="message" rows="5" cols="33"></textarea>
+                    <br>
+                    <input type="submit" value="Send"/>
+                </fieldset>
+            </form>
         </section>
 
-        <article>
+        <section>
+            <header>
+                <h2>Exploration</h3>
+            </header>
 
-        </article>
+            <div>
+                <label for="colors">Choose a color:</label>
+                <select id="colors">
+                    <optgroup label="dark_color">
+                        <option>black</option>
+                        <option>dark purple</option>
+                    </optgroup>
+                    <optgroup label="light_color">
+                        <option>light yellow</option>
+                        <option>white</option>
+                    </optgroup>
+                </select>
+                <br>
+                <label for="color2">Choose a color:</label>
+                <input list="colors2" id="color2" name="color2" />
+                <datalist id="colors2">
+                <option value="black"></option>
+                <option value="dark_purple"></option>
+                <option value="light_yellow"></option>
+                <option value="white"></option>
+                </datalist>
 
-        <aside>
+                <details>
+                    <summary>Summary</summary>
+                    Details in the summary
+                </details>
 
-        </aside>
+                <ol>
+                    <li>First</li>
+                    <li>Second</li>
+                </ol>
+
+                <audio controls>
+                    <source src="./assets/demo.mp3" type="audio/mp3">
+                    Sorry your browser doesn't support audio.
+                </audio>
+            </div>
+        </section>
     </main>
 
     <footer>
-
+        <p><b><i>2023 Qijun Hu. All rights reserved.</i></b></p>
     </footer>
 </body>
 </html>
 
 <!-- 
-    header, nav, main, section, article, aside, footer
-    h1, h2, h3, p, div, span, br, b, i, strong, em
-    ul, ol, optgroup, li
-    code, pre, hr, a
-    form, label, fieldset, legend, input, textarea
-    datalist, select, option
-    details, summary
-    button
-    table, tr, td, th, caption, col, colgroup
     iframe
-    figure, figcaption, picture, source, img
-    audio, video
     canvas, script, svg
     template
  -->
