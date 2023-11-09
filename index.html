@@ -6,9 +6,7 @@
     <title>Qijun's Portfolio</title>
     <link href="index.css" rel="stylesheet" />
     <style>
-        body {
-            border: solid;
-        }
+        
     </style>
 </head>
 <body>
@@ -22,48 +20,49 @@
 
     <main>
         <section id="home">
-            <h1>Hi, I am Qijun(Mary) Hu!</h1>
-            <p>I am an undergraduate student majoring in <span><strong>Math-CS</strong></span> and <span><strong>Cognitive Science</strong></span> with <em>Design and Interaction specialization</em> at UCSD.
-                I focus on <span><strong>Front-End</strong></span> and <span><strong>Full-Stack</strong></span> developing.</p>
+            <div id="home-text">
+                <h1>Hi, I am Qijun Hu!</h1>
+                <p>I am an undergraduate student majoring in <strong>Computer Science</strong> and <strong>Human-Computer Interaction</strong> at UC San Diego.</p>
+                <p>I focus on <strong>Front-End</strong> developing and <strong>UX Design</strong>.</p>
+            </div>
             <picture>
-                <source srcset="./assets/hero.webp" type="image/webp" />
-                <img src="./assets/hero.png" alt="hero image here" />
+                <source srcset="./assets/hero-large.webp" type="image/webp" media="(min-width: 800px)" />
+                <source srcset="./assets/hero-medium.webp" type="image/webp" media="(min-width: 600px)" />
+                <img src="./assets/hero-small.webp" alt="hero image here"/>
             </picture>
         </section>
-        <hr>
         <section id="project">
             <header>
-                <h2>Project</h2>
+                <h2>Projects</h2>
             </header>
 
-            <article>
-                <figure>
-                    <img src="./assets/project_icon.png" alt="project 1 icon here" />
-                </figure>
-                <h3>Account Safety APP</h3>
-                <p>This app is designed to protect users' accounts by generating fake identities, managing passwords, and showing log in locations for users.</p>
-                <button>Learn More</button>
-            </article>
-            <br>
-            <article>
-                <figure>
-                    <img src="./assets/project_icon.png" alt="project 2 icon here" />
-                </figure>
-                <h3>Project 2</h3>
-                <p>This website is...</p>
-                <button>Learn More</button>
-            </article>
-            <br>
-            <article>
-                <figure>
-                    <img src="./assets/project_icon.png" alt="project 3 icon here" />
-                </figure>
-                <h3>Project 3</h3>
-                <p>This web app is...</p>
-                <button>Learn More</button>
-            </article>
+            <div id="project-cards">
+                <article>
+                    <figure>
+                        <img src="./assets/project_icon.png" alt="project 1 icon here" />
+                    </figure>
+                    <h3>Account Safety APP</h3>
+                    <p>This app is designed to protect users' accounts by generating fake identities, managing passwords, and showing log-in locations for users.</p>
+                    <button>Learn More</button>
+                </article>
+                <article>
+                    <figure>
+                        <img src="./assets/project_icon.png" alt="project 2 icon here" />
+                    </figure>
+                    <h3>Account Safety APP</h3>
+                    <p>This app is designed to protect users' accounts by generating fake identities, managing passwords, and showing log-in locations for users.</p>
+                    <button>Learn More</button>
+                </article>
+                <article>
+                    <figure>
+                        <img src="./assets/project_icon.png" alt="project 3 icon here" />
+                    </figure>
+                    <h3>Account Safety APP</h3>
+                    <p>This app is designed to protect users' accounts by generating fake identities, managing passwords, and showing log-in locations for users.</p>
+                    <button>Learn More</button>
+                </article>
+            </div>
         </section>
-        <hr>
         <section id="about">
             <header>
                 <h2>About</h2>
@@ -98,7 +97,7 @@
             </form>
         </section>
 
-        <section>
+        <!-- <section>
             <header>
                 <h2>Exploration</h2>
             </header>
@@ -159,7 +158,7 @@
                     <p>This part can be added in using javascript as a template.</p>
                 </template>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <footer>

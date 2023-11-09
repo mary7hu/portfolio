@@ -1,0 +1,155 @@
+/*
+CSS Animations, Transitions and Transforms
+Use wider gamut color with color() and color-mix()
+
+To adjust pictures with their frames make sure to use object-position and object-fit attributes.
+*/
+
+:root {
+    --main-grey-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Noto-Sans-Regular;
+    src: url('assets/NotoSans_Regular.ttf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* Demonstrating custom fonts here but not using it because the font I want to use is already build in */
+    /* font-family: Noto-Sans-Regular, sans-serif; */
+}
+
+nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    height: 9dvh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20dvw;
+    opacity: 90%;
+}
+
+nav > a {
+    color: var(--main-grey-color, black);
+    text-decoration: none;
+}
+
+section {
+    height: 91dvh;
+}
+
+#home {
+    background-color: #fffdde;
+    display: grid;
+    grid-template-columns: 35% 35%;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#home-text h1 {
+    font-size: 3rem;
+    color: var(--main-grey-color, black);
+}
+
+#home-text p:has(+ p) {
+    margin-top: 3rem;
+}
+
+#home-text p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--main-grey-color, black);
+    line-height: 1.2;
+}
+
+#home-text p :first-child {
+    color: #4bc1e5;
+    font-size: 2rem;
+}
+
+#home-text p :nth-child(2) {
+    color: #4b7ee5;
+    font-size: 2rem;
+}
+
+#project {
+    background-color: #e9fac7;
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 6dvh; */
+    justify-content: center;
+}
+
+#project h2 {
+    margin-left: 10dvw;
+    /* margin-bottom: 6dvh; */
+    /* margin-top: 10dvh; */
+    font-size: 3rem;
+}
+
+#project-cards {
+    /* margin-bottom: 30dvh; */
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#project-cards h3 {
+    font-size: 1.3rem;
+}
+
+#project-cards p {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px){
+    nav {
+        padding: 0 10vw;
+    }
+
+    #home-text h1 {
+        font-size: 2rem;
+    }
+
+    #home-text p:has(+ p) {
+        margin-top: 2rem;
+    }
+
+    #home-text p {
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.2;
+    }
+
+    #home-text p :first-child {
+        font-size: 1.5rem;
+    }
+    
+    #home-text p :nth-child(2) {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #home {
+        grid-template-columns: 80%;
+        grid-template-rows: 50% 50%;
+    }
+}
