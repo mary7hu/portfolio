@@ -151,9 +151,18 @@ card-content button:hover {
     color: var(--main-blue-color, white);
 }
 
+footer {
+    background-color: var(--main-grey-color, #333);
+    color: white;
+    height: 5vh;
+    padding-left: 1vw;
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 800px){
     nav {
-        padding: 0 10vw;
+        padding: 0 10dvw;
     }
 
     #home-text h1 {
@@ -187,31 +196,29 @@ card-content button:hover {
     }
 
     #project-cards {
-        margin-bottom: 5dvh;
-        display: grid;
+        margin-bottom: 15dvh;
         grid-template-columns: 35% 35%;
         grid-template-rows: 60% 60%;
-        justify-items: center;
-        justify-content: space-evenly;
     }
 }
 
 @media screen and (max-width: 600px){
+    nav {
+        padding: 0;
+    }
+
     #home {
         grid-template-columns: 80%;
         grid-template-rows: 50% 50%;
     }
 
     #project {
-        height: 160dvh;
+        height: 200dvh;
     }
 
     #project-cards {
-        margin-bottom: 5dvh;
-        display: grid;
-        grid-template-columns: 35% 35%;
-        grid-template-rows: 60% 60%;
-        justify-items: center;
-        justify-content: space-evenly;
+        margin-bottom: 24dvh;
+        grid-template-columns: 80%;
+        grid-template-rows: 40% 40% 40%;
     }
 }
