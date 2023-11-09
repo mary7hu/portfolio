@@ -56,6 +56,10 @@ section {
     justify-content: space-evenly;
 }
 
+#home img {
+    width: 400px;
+}
+
 #home-text h1 {
     font-size: 3rem;
     color: var(--main-grey-color, #333);
@@ -115,14 +119,14 @@ section {
     }
 }
 
+#project-cards :nth-child(3) picture {
+    transform: rotate(0.5turn);
+}
+
 project-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#project-cards :nth-child(3) picture {
-    transform: rotate(0.5turn);
 }
 
 card-content h3 {
@@ -163,6 +167,10 @@ footer {
 @media screen and (max-width: 800px){
     nav {
         padding: 0 10dvw;
+    }
+
+    #home img {
+        width: 300px;
     }
 
     #home-text h1 {
@@ -210,6 +218,10 @@ footer {
     #home {
         grid-template-columns: 80%;
         grid-template-rows: 50% 50%;
+    }
+
+    #home img {
+        width: 250px;
     }
 
     #project {
