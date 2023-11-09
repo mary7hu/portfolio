@@ -1,12 +1,7 @@
-/*
-CSS Animations, Transitions and Transforms
-Use wider gamut color with color() and color-mix()
-
-To adjust pictures with their frames make sure to use object-position and object-fit attributes.
-*/
-
 :root {
     --main-grey-color: #333;
+    --main-green-color: color(a98-rgb 0.5 0.5 0.3);
+    --main-blue-color: color-mix(in srgb, #34c9eb 20%, white);
 }
 
 * {
@@ -39,10 +34,11 @@ nav {
     align-items: center;
     padding: 0 20dvw;
     opacity: 90%;
+    z-index: 1;
 }
 
 nav > a {
-    color: var(--main-grey-color, black);
+    color: var(--main-grey-color, #333);
     text-decoration: none;
 }
 
@@ -62,7 +58,7 @@ section {
 
 #home-text h1 {
     font-size: 3rem;
-    color: var(--main-grey-color, black);
+    color: var(--main-grey-color, #333);
 }
 
 #home-text p:has(+ p) {
@@ -72,7 +68,7 @@ section {
 #home-text p {
     font-size: 1.5rem;
     margin-top: 1rem;
-    color: var(--main-grey-color, black);
+    color: var(--main-grey-color, #333);
     line-height: 1.2;
 }
 
@@ -90,33 +86,69 @@ section {
     background-color: #e9fac7;
     display: flex;
     flex-direction: column;
-    /* row-gap: 6dvh; */
+    row-gap: 10dvh;
     justify-content: center;
 }
 
 #project h2 {
     margin-left: 10dvw;
-    /* margin-bottom: 6dvh; */
-    /* margin-top: 10dvh; */
     font-size: 3rem;
 }
 
 #project-cards {
-    /* margin-bottom: 30dvh; */
+    margin-bottom: 5dvh;
     display: grid;
     grid-template-columns: 20% 20% 20%;
     grid-template-rows: 100%;
     justify-items: center;
-    align-items: center;
     justify-content: space-evenly;
+    animation-duration: 2s;
+    animation-name: appear;
 }
 
-#project-cards h3 {
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100%;
+    }
+}
+
+project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#project-cards :nth-child(3) picture {
+    transform: rotate(0.5turn);
+}
+
+card-content h3 {
     font-size: 1.3rem;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-#project-cards p {
+card-content p {
     font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+card-content button {
+    background-color: var(--main-grey-color, #333);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 1rem;
+    width: 100%;
+    transition: color 2s;
+}
+
+card-content button:hover {
+    color: var(--main-blue-color, white);
 }
 
 @media screen and (max-width: 800px){
