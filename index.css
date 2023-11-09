@@ -177,11 +177,41 @@ card-content button:hover {
     #home-text p :nth-child(2) {
         font-size: 1.5rem;
     }
+
+    #project {
+        height: 160dvh;
+    }
+
+    #project h2 {
+        font-size: 2rem;
+    }
+
+    #project-cards {
+        margin-bottom: 5dvh;
+        display: grid;
+        grid-template-columns: 35% 35%;
+        grid-template-rows: 60% 60%;
+        justify-items: center;
+        justify-content: space-evenly;
+    }
 }
 
 @media screen and (max-width: 600px){
     #home {
         grid-template-columns: 80%;
         grid-template-rows: 50% 50%;
+    }
+
+    #project {
+        height: 160dvh;
+    }
+
+    #project-cards {
+        margin-bottom: 5dvh;
+        display: grid;
+        grid-template-columns: 35% 35%;
+        grid-template-rows: 60% 60%;
+        justify-items: center;
+        justify-content: space-evenly;
     }
 }
