@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qijun's Portfolio</title>
-    <link href="index.css" rel="stylesheet" />
-    <script src="index.js"></script>
+    <link href="form-no-js.css" rel="stylesheet" />
+    <style>
+        
+    </style>
 </head>
 <body>
-    <noscript>
-        <p>Disable JavaScript will limit the funtionality of this website, including change theme, contact form, etc.</p>
-    </noscript>
-    <header>
-        <img src="assets/signature.png"/>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#project">Project</a>
-            <a href="#about">About</a>
-            <a href="./assets/Resume_Software_Development_Engineer_Qijun_Hu.pdf" target="_blank">Resume</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button>change theme</button>
-    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#project">Project</a>
+        <a href="#about">About</a>
+        <a href="./assets/Resume_Software_Development_Engineer_Qijun_Hu.pdf" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
     <main>
         <section id="home">
@@ -96,27 +91,27 @@
                 <h2>Contact</h2>
             </header>
 
-            <form action="https://httpbin.org/post" method="post">
+            <form action="https://httpbin.org/get" method="get">
                 <div class="form-input">
                     <label for="name">Name*</label>
                     <input type="text" id="name" name="name" required/>
                     <output name="error" for="name">Please input your name</output>
-                    <output name="information" for="name"></output>
+                    <output name="information" for="name">info1</output>
                 </div>
 
                 <div class="form-input">
-                    <label for="email">Email Address*</label>
-                    <input type="email" id="email" name="email" required/>
-                    <output name="error" for="email">Please input a valid email</output>
-                    <output name="information" for="email"></output>
+                    <label for="email_address">Email Address*</label>
+                    <input type="email" id="email_address" name="email_address" required/>
+                    <output name="error" for="email_address">Please input a valid email</output>
+                    <output name="information" for="email_address">info2</output>
                 </div>
 
                 <div class="form-input">
                     <label for="message">Message*</label>
-                    <textarea id="message" name="message" rows="8" cols="50" required></textarea>
-                    <!-- <input type="text" id="message" name="message" maxlength="10" pattern="([A-Za-z0-9 ,.!:;'])*" required/> -->
-                    <output name="error" for="message">Please input your message</output>
-                    <output name="information" for="message">0/100</output>
+                    <!-- <textarea id="message" name="message" rows="5" cols="33" required></textarea> -->
+                    <input type="text" id="message" name="message" maxlength="10" pattern="([A-Za-z0-9 ,.!:;'])*" required/>
+                    <output name="error" for="message">Please input your message with less than 1000 characters and without non-typical characters</output>
+                    <output name="information" for="message">info3</output>
                 </div>
 
                 <input type="hidden" id="possible_bot" name="possible_bot" value="true">

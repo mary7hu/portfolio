@@ -1,11 +1,6 @@
 :root {
-    --nav-color: white; /*2C74B3*/
-    --text-color: #333; /*rgb(243, 243, 243)*/
-    --home-color: #fffdde; /*0A2647*/
-    --project-color: #e9fac7; /*144272*/
-    --button-text-color: white; /*333*/
-    --button-hover-color: #646464; /*a0a0a0*/
-    --contact-color: #eee; /*0A2647*/
+    --main-grey-color: #333;
+    --main-green-color: color(a98-rgb 0.5 0.5 0.3);
 }
 
 * {
@@ -21,38 +16,21 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-noscript {
-    color: red;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-body > header {
-    background-color: var(--nav-color);
-    display: grid;
-    grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 100%;
-    align-items: center;
-    justify-items: stretch;
-    padding-right: 20px;
-    padding-left: 20px;
+nav {
+    background-color: white;
     position: sticky;
     top: 0;
     height: 9dvh;
-    opacity: 90%;
-}
-
-nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 15dvw;
+    padding: 0 20dvw;
+    opacity: 90%;
+    z-index: 1;
 }
 
 nav > a {
-    color: var(--text-color);
+    color: var(--main-grey-color, #333);
     text-decoration: none;
 }
 
@@ -61,7 +39,7 @@ section {
 }
 
 #home {
-    background-color: var(--home-color);
+    background-color: #fffdde;
     display: grid;
     grid-template-columns: 35% 35%;
     grid-template-rows: 100%;
@@ -76,7 +54,7 @@ section {
 
 #home-text h1 {
     font-size: 3rem;
-    color: var(--text-color);
+    color: var(--main-grey-color, #333);
 }
 
 #home-text p:has(+ p) {
@@ -86,7 +64,7 @@ section {
 #home-text p {
     font-size: 1.5rem;
     margin-top: 1rem;
-    color: var(--text-color);
+    color: var(--main-grey-color, #333);
     line-height: 1.2;
 }
 
@@ -101,7 +79,7 @@ section {
 }
 
 #project {
-    background-color: var(--project-color);
+    background-color: #e9fac7;
     display: flex;
     flex-direction: column;
     row-gap: 10dvh;
@@ -111,7 +89,6 @@ section {
 #project h2 {
     margin-left: 10dvw;
     font-size: 3rem;
-    color: var(--text-color);
 }
 
 #project-cards {
@@ -133,18 +110,16 @@ card-content h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
     width: 100%;
-    color: var(--text-color);
 }
 
 card-content p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: var(--text-color);
 }
 
 card-content button {
-    background-color: var(--text-color);
-    color: var(--button-text-color);
+    background-color: var(--main-grey-color, #333);
+    color: white;
     padding: 10px 20px;
     border-radius: 20px;
     border-style: none;
@@ -153,7 +128,7 @@ card-content button {
 }
 
 card-content button:hover {
-    background-color: var(--button-hover-color);
+    background-color: #646464;
     cursor: pointer;
 }
 
@@ -162,7 +137,7 @@ card-content button:hover {
 }
 
 #contact {
-    background-color: var(--contact-color);
+    background-color: #eee;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,7 +147,6 @@ card-content button:hover {
 #contact h2 {
     font-size: 3rem;
     margin-left: 10dvw;
-    color: var(--text-color);
 }
 
 #contact form {
@@ -186,7 +160,6 @@ card-content button:hover {
 #contact label {
     display: block;
     margin-bottom: 5px;
-    color: var(--text-color);
 }
 
 #contact input#name {
@@ -195,62 +168,47 @@ card-content button:hover {
     width: 125px;
 }
 
-#contact input#email {
+#contact input#email_address {
     display: block;
     height: 20px;
     width: 200px;
 }
 
-#contact textarea#message {
+#contact input#message {
     display: block;
     height: 100px;
     width: 500px;
 }
 
-#contact output[name = 'error'] {
+#contact output {
     visibility: hidden;
     color: red;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        visibility: 'hidden';
-    }
-    to {
-        opacity: 1;
-        visibility: 'visible';
-    }
+#contact input#name:user-invalid:required + output {
+    visibility: visible;
 }
 
-@keyframes disappear {
-    from {
-        opacity: 1;
-        visibility: 'visible';
-    }
-    to {
-        opacity: 0;
-        visibility: 'hidden';
-    }
+#contact input#email_address:user-invalid + output {
+    visibility: visible;
+}
+
+#contact input#message:user-invalid + output {
+    visibility: visible;
 }
 
 #contact button {
-    background-color: var(--text-color);
-    color: var(--button-text-color);
+    background-color: var(--main-grey-color, #333);
+    color: white;
     padding: 10px 20px;
     border-radius: 20px;
     border-style: none;
     font-size: 1rem;
 }
 
-#contact button:hover {
-    background-color: var(--button-hover-color);
-    cursor: pointer;
-}
-
 footer {
-    background-color: var(--text-color);
-    color: var(--button-text-color);
+    background-color: var(--main-grey-color, #333);
+    color: white;
     height: 5vh;
     padding-left: 1vw;
     display: flex;
