@@ -1,11 +1,12 @@
+/*0A2647 144272 205295 2C74B3*/
 :root {
-    --nav-color: white; /*2C74B3*/
-    --text-color: #333; /*rgb(243, 243, 243)*/
-    --home-color: #fffdde; /*0A2647*/
-    --project-color: #e9fac7; /*144272*/
-    --button-text-color: white; /*333*/
-    --button-hover-color: #646464; /*a0a0a0*/
-    --contact-color: #eee; /*0A2647*/
+    --nav-color: #205295; /*white*/
+    --text-color: rgb(243, 243, 243); /*333*/
+    --home-color: #0A2647; /*fffdde*/
+    --project-color: #144272; /*e9fac7*/
+    --button-text-color: #333; /*white*/
+    --button-hover-color: #a0a0a0; /*646464*/
+    --contact-color: #0A2647; /*eee*/
 }
 
 * {
@@ -29,10 +30,15 @@ noscript {
     z-index: 1;
 }
 
+noscript p {
+    background-color: var(--nav-color);
+    opacity: 90%;
+}
+
 body > header {
     background-color: var(--nav-color);
     display: grid;
-    grid-template-columns: 5% 90% 5%;
+    grid-template-columns: 70px auto 70px;
     grid-template-rows: 100%;
     align-items: center;
     justify-items: stretch;
@@ -48,12 +54,30 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 15dvw;
+    padding: 0 10dvw;
 }
 
 nav > a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+header button {
+    background-color: transparent;
+    color: var(--text-color);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 1px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+header button:hover {
+    background-color: var(--button-hover-color);
+    color: var(--button-text-color);
+    cursor: pointer;
 }
 
 section {
@@ -249,8 +273,8 @@ card-content button:hover {
 }
 
 footer {
-    background-color: var(--text-color);
-    color: var(--button-text-color);
+    background-color: #333;
+    color: white;
     height: 5vh;
     padding-left: 1vw;
     display: flex;
@@ -259,7 +283,7 @@ footer {
 
 @media screen and (max-width: 800px){
     nav {
-        padding: 0 10dvw;
+        padding: 0 7dvw;
     }
 
     #home img {

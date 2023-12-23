@@ -1,30 +1,21 @@
 const r = document.querySelector(':root');
 let dark = localStorage.getItem('dark');
-if (dark === 'true') {
-    dark = true;
-} else {
+if (dark === 'false') {
     dark = false;
-}
-
-if (!dark) {
-    r.style.setProperty('--nav-color', 'white');
-    r.style.setProperty('--text-color', '#333');
-    r.style.setProperty('--home-color', '#fffdde');
-    r.style.setProperty('--project-color', '#e9fac7');
-    r.style.setProperty('--button-text-color', 'white');
-    r.style.setProperty('--button-hover-color', '#646464');
-    r.style.setProperty('--contact-color', '#eee');
 } else {
-    r.style.setProperty('--nav-color', '#2C74B3');
-    r.style.setProperty('--text-color', 'rgb(243, 243, 243)');
-    r.style.setProperty('--home-color', '#0A2647');
-    r.style.setProperty('--project-color', '#144272');
-    r.style.setProperty('--button-text-color', '#333');
-    r.style.setProperty('--button-hover-color', '#a0a0a0');
-    r.style.setProperty('--contact-color', '#0A2647');
+    dark = true;
 }
+setTheme(dark);
 
 document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('header img');
+    const themeButton = document.querySelector('header button');
+    
+    if (!dark) {
+        logo.src = 'assets/signature-black.png';
+        themeButton.innerHTML = 'Dark';
+    }
+
     const form = document.querySelector('form');
     const name = document.getElementById('name');
     const nameError = document.querySelector('input#name + output');
@@ -33,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('message');
     const messageError = document.querySelector('textarea#message + output');
     const messageInfo = document.querySelector('textarea#message + output + output');
-    const themeButton = document.querySelector('nav + button');
     let nameValid, emailValid, messageValid, lengthValid = false;
     let form_errors = [];
 
@@ -49,23 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dark) {
             dark = false;
             localStorage.setItem('dark', 'false');
-            r.style.setProperty('--nav-color', 'white');
-            r.style.setProperty('--text-color', '#333');
-            r.style.setProperty('--home-color', '#fffdde');
-            r.style.setProperty('--project-color', '#e9fac7');
-            r.style.setProperty('--button-text-color', 'white');
-            r.style.setProperty('--button-hover-color', '#646464');
-            r.style.setProperty('--contact-color', '#eee');
+            setTheme(dark);
+            logo.src = 'assets/signature-black.png';
+            themeButton.innerHTML = 'Dark';
         } else {
             dark = true;
-            localStorage.setItem('dark', 'true');
-            r.style.setProperty('--nav-color', '#2C74B3');
-            r.style.setProperty('--text-color', 'rgb(243, 243, 243)');
-            r.style.setProperty('--home-color', '#0A2647');
-            r.style.setProperty('--project-color', '#144272');
-            r.style.setProperty('--button-text-color', '#333');
-            r.style.setProperty('--button-hover-color', '#a0a0a0');
-            r.style.setProperty('--contact-color', '#0A2647');
+            localStorage.removeItem('dark');
+            setTheme(dark);
+            logo.src = 'assets/signature-white.png';
+            themeButton.innerHTML = 'Light';
         }
     }
 
@@ -167,3 +149,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+function setTheme(dark) {
+    if (dark) {
+        r.style.setProperty('--nav-color', '#205295');
+        r.style.setProperty('--text-color', 'rgb(243, 243, 243)');
+        r.style.setProperty('--home-color', '#0A2647');
+        r.style.setProperty('--project-color', '#144272');
+        r.style.setProperty('--button-text-color', '#333');
+        r.style.setProperty('--button-hover-color', '#a0a0a0');
+        r.style.setProperty('--contact-color', '#0A2647');
+    } else {
+        r.style.setProperty('--nav-color', 'white');
+        r.style.setProperty('--text-color', '#333');
+        r.style.setProperty('--home-color', '#fffdde');
+        r.style.setProperty('--project-color', '#e9fac7');
+        r.style.setProperty('--button-text-color', 'white');
+        r.style.setProperty('--button-hover-color', '#646464');
+        r.style.setProperty('--contact-color', '#eee');
+    }
+}
