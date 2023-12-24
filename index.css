@@ -6,7 +6,8 @@
     --project-color: #144272; /*e9fac7*/
     --button-text-color: #333; /*white*/
     --button-hover-color: #a0a0a0; /*646464*/
-    --contact-color: #0A2647; /*eee*/
+    --about-color: #0A2647; /*e0defa*/
+    --contact-color: #144272; /*eee*/
 }
 
 * {
@@ -182,7 +183,8 @@ card-content button:hover {
 }
 
 #about {
-    background-color: #e0defa;
+    background-color: var(--about-color);
+    color: var(--text-color);
 }
 
 #contact {

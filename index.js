@@ -158,7 +158,8 @@ function setTheme(dark) {
         r.style.setProperty('--project-color', '#144272');
         r.style.setProperty('--button-text-color', '#333');
         r.style.setProperty('--button-hover-color', '#a0a0a0');
-        r.style.setProperty('--contact-color', '#0A2647');
+        r.style.setProperty('--about-color', '#0A2647');
+        r.style.setProperty('--contact-color', '#144272');
     } else {
         r.style.setProperty('--nav-color', 'white');
         r.style.setProperty('--text-color', '#333');
@@ -166,6 +167,7 @@ function setTheme(dark) {
         r.style.setProperty('--project-color', '#e9fac7');
         r.style.setProperty('--button-text-color', 'white');
         r.style.setProperty('--button-hover-color', '#646464');
+        r.style.setProperty('--about-color', '#e0defa');
         r.style.setProperty('--contact-color', '#eee');
     }
 }
